@@ -7,7 +7,6 @@ import Card from "../../components/card/Card";
 export default function Users() {
   const {data, isLoader, error} = useFetch(`${import.meta.env.VITE_BURL}/users`);
 
-  
     if (isLoader) {
         return (
             <>

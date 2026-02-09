@@ -8,6 +8,7 @@ import Products from "./components/products/Products";
 import DashboardLayout from './layout/DashboardLayout';
 import About from './pages/about/About';
 import Users from "./pages/users/Users";
+import User from "./components/user/User";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <Users />,
+      },
+      {
+        path: "users/:id",
+        element: <User />,
       }
     ]
   },
