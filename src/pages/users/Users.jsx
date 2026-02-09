@@ -1,30 +1,11 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
 import Loader from "../../components/loader/Loader";
 import CardLoader from "../../components/cardLoader/CardLoader";
+import useFetch from "../../hooks/useFetch";
 
 export default function Users() {
-  const [users, setUsers] = useState([]);
-  const [isLoader, setIsLoader] = useState(true);
-  const [error, setError] = useState(false);
+  const {data, isLoader, error} = useFetch(`${import.meta.env.VITE_BURL}/users`);
 
-  const getUsers = async ()=>{
-    try {
-      const response = await axios.get(`${import.meta.env.VITE_BURL}/users`);
-      
-      setUsers(response.data.users);
-      console.log(response);
-    } catch (err) {
-      setError(true);
-      console.log(error + err);
-    } finally {
-      setIsLoader(false);
-    }
-  }
-
-  useEffect(() => {
-      getUsers();
-    }, []);
   
     if (isLoader) {
         return (
@@ -42,7 +23,7 @@ export default function Users() {
     <section className="users py-5 text-center">
       <div className="container">
         <div className="row g-3">
-          {users.map((user) => {
+          {data.users.map((user) => {
             return (
               <div className="col-md-4">
                 <div className="card user py-4">
