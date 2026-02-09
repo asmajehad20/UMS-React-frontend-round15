@@ -9,6 +9,7 @@ import DashboardLayout from './layout/DashboardLayout';
 import About from './pages/about/About';
 import Users from "./pages/users/Users";
 import User from "./components/user/User";
+import Create from "./components/create/Create";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "create",
+        element: <Create />,
       },
       {
         path: "users",

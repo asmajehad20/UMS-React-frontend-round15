@@ -28,7 +28,9 @@ export default function Navbar() {
             <li className="nav-item">
               <Link className="nav-link text-white fw-bold fs-5" to="/users">Users</Link>
             </li>
-           
+            <li className="nav-item">
+              <Link className="nav-link text-white fw-bold fs-5" to="/create">Create</Link>
+            </li>
           </ul>
         </div>
 

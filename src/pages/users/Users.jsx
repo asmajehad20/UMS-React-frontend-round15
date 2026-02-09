@@ -12,7 +12,7 @@ export default function Users() {
 
   const handleDelete = async (id) => {
     try {
-      // await axios.delete(`${import.meta.env.VITE_BURL}/users/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BURL}/users/${id}`);
       toast.success("deleted successfully", {
         position: "top-right",
         autoClose: 5000,
