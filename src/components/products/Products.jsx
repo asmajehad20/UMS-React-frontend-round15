@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import style from "./Products.module.css";
-
+import Loader from "../loader/Loader";
 
 export default function Products() {
   const [posts, setPosts] = useState([]);
@@ -27,16 +26,7 @@ export default function Products() {
 
   if (isLoader) {
     return (
-      <>
-        <h2>please wait</h2>;
-        <div className= {`text-center ${style.loading} `}>
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-      </>
+      <Loader />
     );
   }
   if (error) {
