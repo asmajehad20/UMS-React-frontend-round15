@@ -2,6 +2,7 @@
 import Loader from "../../components/loader/Loader";
 import CardLoader from "../../components/cardLoader/CardLoader";
 import useFetch from "../../hooks/useFetch";
+import Card from "../../components/card/Card";
 
 export default function Users() {
   const {data, isLoader, error} = useFetch(`${import.meta.env.VITE_BURL}/users`);
@@ -25,14 +26,7 @@ export default function Users() {
         <div className="row g-3">
           {data.users.map((user) => {
             return (
-              <div className="col-md-4">
-                <div className="card user py-4">
-                  <img src={user.imageUrl} className="card-img-top"/>
-                  <div className="card-body">
-                    <h2 className="card-title">{user.name}</h2>
-                  </div>
-                </div>
-              </div>
+              <Card data={user}/>
             );
           })}
         </div>
